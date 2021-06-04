@@ -1,0 +1,18 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+
+    <div>
+      <label>
+        Email:
+           <input formControlName="email" class="{{myForm.controls.email.errors !== null ? 'error' : ''}}" placeholder="Your email">
+      </label>
+    </div>
+    <div>
+      <label>
+        password:
+        <input formControlName="password" placeholder="Your password">
+      </label>
+    </div>
+    <!-- <button type="submit">Send</button> -->
+    <button type="submit" [disabled]="myForm.invalid">Signin</button>
+  </form>
+
