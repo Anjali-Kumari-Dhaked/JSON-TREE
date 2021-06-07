@@ -14,11 +14,8 @@ import { Component5Component } from '../component5/component5.component';
 export class ShowcomponentComponent implements OnInit {
   json:any=[];
   json1:any=[];
-  json2:any=[];
-  json3:any=[];
-  json4:any=[];
-  json5:any=[];
-    i:any;
+  
+    
   componentRef: any;
   @ViewChild('loadComponent', { read: ViewContainerRef })
   entry:any= ViewContainerRef;
@@ -26,18 +23,18 @@ export class ShowcomponentComponent implements OnInit {
     this.httpClient.get("assets/component.json").subscribe(data =>{
       console.log(data);
       this.json = data;
-      for ( this.i=0; this.i<= this.json.length-2; this.i++) {
-        this.json1.push(this.json[this.i]);
-        }
-      for ( this.i=0; this.i<= this.json1.length-2; this.i++) {
-          this.json2.push(this.json1[this.i]);
-      }
-      for ( this.i=0; this.i<= this.json2.length-2; this.i++) {
-        this.json3.push(this.json2[this.i]);
-    }
-    for ( this.i=0; this.i<= this.json3.length-2; this.i++) {
-      this.json4.push(this.json3[this.i]);
-  }
+  //     for ( this.i=0; this.i<= this.json.length-2; this.i++) {
+  //       this.json1.push(this.json[this.i]);
+  //       }
+  //     for ( this.i=0; this.i<= this.json1.length-2; this.i++) {
+  //         this.json2.push(this.json1[this.i]);
+  //     }
+  //     for ( this.i=0; this.i<= this.json2.length-2; this.i++) {
+  //       this.json3.push(this.json2[this.i]);
+  //   }
+  //   for ( this.i=0; this.i<= this.json3.length-2; this.i++) {
+  //     this.json4.push(this.json3[this.i]);
+  // }
 
       
    })}
@@ -46,35 +43,36 @@ export class ShowcomponentComponent implements OnInit {
     //  this.say=DynamicComponent;
   }
 
-  createComponent(process: string) {
+  createComponent(process: number) {
+    console.log(process);
     this.entry.clear();
-    if (process=='1') {
+    if (process==1) {
       this.component1();
-      this.component2();
-      this.component3();
-      this.component4();
-      this.component5();
+      // this.component2();
+      // this.component3();
+      // this.component4();
+      // this.component5();
       
     } 
-    else if (process =='2') {
-      this.component1();
+    else if (process ==2) {
       this.component2();
-      this.component3();
-      this.component4();
+      // this.component2();
+      // this.component3();
+      // this.component4();
       
     }
   
-    else if (process == '3') {
-      this.component1();
-      this.component2();
+    else if (process == 3) {
       this.component3();
+      // this.component2();
+      // this.component3();
     }
-    else if (process == '4') {
-      this.component1();
-      this.component2();
+    else if (process == 4) {
+      this.component4();
+      // this.component2();
     } 
-    else if (process == '5') {
-      this.component1();
+    else if (process == 5) {
+      this.component5();
     }
   
 
@@ -86,8 +84,8 @@ export class ShowcomponentComponent implements OnInit {
   }
 
 
-  selectComponent(id : string) {
-    this.createComponent(id);
+  selectComponent(id : number) {
+    this.createComponent(id+1);
   }
 
 component1(){
@@ -109,5 +107,16 @@ component4(){
 component5(){
   const factory = this.resolver.resolveComponentFactory(Component5Component);
   this.componentRef = this.entry.createComponent(factory);
+}
+in(i:number){
+this.json1=[];
+console.log(this.json,i);
+this.json.forEach((element:any) => {
+  if(element.process==i){
+    console.log(element.process);
+    this.json1=this.json[i-1].components;
+    console.log(this.json1);
+  }
+});
 }
 }
