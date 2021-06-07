@@ -1,16 +1,47 @@
+<ng-container *ngComponentOutlet = "say"></ng-container>
+<button class="btn btn-primary" (click)="sayHi()">Say Hi</button>
+<button class="btn btn-success" (click)="sayHello()">Say Hello</button>
+<button class="btn btn-danger" (click)="sayBye()">Say bye</button> <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <div class="box-header with-border">
     <div class="form-group voffset row"> 
         <label for="" class="vertical-label col-sm-4 col-md-8 text-right"> Update Form</label> 
         <div class="col-sm-8 col-md-4">
-            <select (change)="selectName(obj.Id)" *ngFor="let obj of object">  
-                    <option value="0">--Select--</option>
+
+           
+
+            <button class="button" (click)="selectName(obj.Id)" *ngFor="let obj of object">  
+                    <!-- <option value="0">--Select--</option> -->
                  <!-- <option [value]="obj.Id" *ngFor="let obj of object">   -->
-                  <option [value]="obj.Id" >
+                  <!-- <option [value]="obj.Id" >
                      {{obj.Name}}  
-              </option>
-         </select>
+              </option> -->
+         </button>
         </div>
     </div>
     <div class="form-group voffset row">

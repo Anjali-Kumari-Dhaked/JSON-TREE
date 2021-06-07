@@ -1,62 +1,16 @@
-<!-- <app-reactive-form></app-reactive-form> -->
 <!-- <app-validate-reactive-form></app-validate-reactive-form> -->
-<!-- <app-stepper></app-stepper> -->
+
 <!-- <app-data-from-json></app-data-from-json> -->
-<!-- <app-jsontree></app-jsontree> -->
-<!-- <app-tree></app-tree> -->
-
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-    <!-- This is the tree node template for leaf nodes -->
-    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-      <!-- use a disabled button to provide padding for tree leaf -->
-      <button mat-icon-button disabled></button>
-      {{node.name}}
-    </mat-tree-node>
-    <!-- This is the tree node template for expandable nodes -->
-    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-      <button mat-icon-button matTreeNodeToggle
-              [attr.aria-label]="'Toggle ' + node.name">
-        <mat-icon class="mat-icon-rtl-mirror">
-          {{treeControl.isExpanded(node) ? '▶' : '▼'}}
-        </mat-icon>
-      </button>
-      {{node.name}}
-    </mat-tree-node>
-  </mat-tree>
+<app-jsontree></app-jsontree>
+<app-main-dynamic></app-main-dynamic><br><br>
+<app-showcomponent></app-showcomponent>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <ng-container *ngComponentOutlet = "say"></ng-container>
-  <button class="btn btn-primary" (click)="sayHi()">Say Hi</button>
-  <button class="btn btn-success" (click)="sayHello()">Say Hello</button>
-  <button class="btn btn-danger" (click)="sayBye()">Say bye</button> <br><br>
-
-
-  <app-main-dynamic></app-main-dynamic>
+<!-- <app-stepper></app-stepper><br><br>
+<app-progress></app-progress><br><br>
+<app-slide-toggle></app-slide-toggle> -->
 
 

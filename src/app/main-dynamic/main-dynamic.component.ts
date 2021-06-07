@@ -1,6 +1,7 @@
 import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { DynamicComponent } from '../dynamic/dynamic.component';
 import { Dynamic2Component } from '../dynamic2/dynamic2.component';
+import { Dynamic3Component } from '../dynamic3/dynamic3.component';
 
 @Component({
   selector: 'app-main-dynamic',
@@ -9,6 +10,7 @@ import { Dynamic2Component } from '../dynamic2/dynamic2.component';
 })
 export class MainDynamicComponent implements OnInit {
   title = 'app';
+  say:any;
   componentRef: any;
   @ViewChild('loadComponent', { read: ViewContainerRef })
    entry:any= ViewContainerRef;
@@ -40,8 +42,20 @@ export class MainDynamicComponent implements OnInit {
   selectName(id : number) {
     this.createComponent(id);
   }
+  
  
   ngOnInit(): void {
+    //  this.say=DynamicComponent;
   }
+  sayHi(){
+    this.say= DynamicComponent;
+  }
+  sayHello(){
+    this.say = Dynamic3Component;
+  }
+  sayBye(){
+    this.say= Dynamic2Component;
+  }
+
 
 }
