@@ -1,6 +1,6 @@
 [
     {
-     "process" : 1,
+     "process" : "1",
      "components" : [
             {"component":"component1"},
             {"component": "component2"},
@@ -11,7 +11,7 @@
     
     },
     {
-     "process" : 2,
+     "process" : "2",
      "components" : [
             {"component":"component1"},
             {"component": "component2"},
@@ -19,20 +19,20 @@
             {"component": "component4"}
                     ]
     },
-    {"process" : 3,
+    {"process" : "3",
         "components" : [
                {"component":"component1"},
                {"component": "component2"},
                {"component": "component3"}
         ]
     },
-    {"process" : 4,
+    {"process" : "4",
         "components" : [
                {"component":"component1"},
                {"component": "component2"}
         ]
     },
-    {"process" : 5,
+    {"process" : "5",
         "components" : [
                {"component":"component1"}
              ]
