@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { ChangeDetectorRef, Component, ComponentFactoryResolver, ComponentRef, Input, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { Component1Component } from '../component1/component1.component';
 import { Component2Component } from '../component2/component2.component';
 import { Component3Component } from '../component3/component3.component';
@@ -14,40 +14,38 @@ import { Component5Component } from '../component5/component5.component';
 export class ShowcomponentComponent implements OnInit {
   json:any=[];
   json1:any=[];
+  //tab:any=this.json[0].components[0].component;
   
-    
+  
   componentRef: any;
-  @ViewChild('loadComponent', { read: ViewContainerRef })
+  @ViewChild('loadComponent', { read: ViewContainerRef }) 
+  
+ 
   entry:any= ViewContainerRef;
-  constructor(private resolver: ComponentFactoryResolver, private httpClient: HttpClient) {
+  constructor(private resolver: ComponentFactoryResolver, private httpClient: HttpClient, private cdRef: ChangeDetectorRef) { 
     this.httpClient.get("assets/component.json").subscribe(data =>{
       console.log(data);
       this.json = data;
-  //     for ( this.i=0; this.i<= this.json.length-2; this.i++) {
-  //       this.json1.push(this.json[this.i]);
-  //       }
-  //     for ( this.i=0; this.i<= this.json1.length-2; this.i++) {
-  //         this.json2.push(this.json1[this.i]);
-  //     }
-  //     for ( this.i=0; this.i<= this.json2.length-2; this.i++) {
-  //       this.json3.push(this.json2[this.i]);
-  //   }
-  //   for ( this.i=0; this.i<= this.json3.length-2; this.i++) {
-  //     this.json4.push(this.json3[this.i]);
-  // }
+ console.log(this.json[0].components[0].component);
 
-      
    })}
 
    ngOnInit(): void {
     //  this.say=DynamicComponent;
   }
 
+
   createComponent(process: number) {
     console.log(process);
     this.entry.clear();
     if (process==1) {
-      this.component1();
+    //   let factory = this.resolver.resolveComponentFactory(Component1Component);
+    // this.componentRef= this.entry.createComponent(factory)
+    // // to access the created instance use
+    // // this.compRef.instance.someProperty = 'someValue';
+    // // this.compRef.instance.someOutput.subscribe(val => doSomething());
+    // this.cdRef.detectChanges();
+    this.component1();
       // this.component2();
       // this.component3();
       // this.component4();
@@ -74,10 +72,8 @@ export class ShowcomponentComponent implements OnInit {
     else if (process == 5) {
       this.component5();
     }
-  
-
-
-    this.componentRef.instance.message = "Called by mainComponent";
+  this.componentRef.instance.message = "Called by mainComponent";
+  //this.destroyComponent();
   }
   destroyComponent() {
     this.componentRef.destroy();
@@ -85,7 +81,7 @@ export class ShowcomponentComponent implements OnInit {
 
 
   selectComponent(id : number) {
-    this.createComponent(id+1);
+    this.createComponent(id+1 );
   }
 
 component1(){
@@ -108,6 +104,7 @@ component5(){
   const factory = this.resolver.resolveComponentFactory(Component5Component);
   this.componentRef = this.entry.createComponent(factory);
 }
+
 in(i:number){
 this.json1=[];
 console.log(this.json,i);
@@ -118,5 +115,4 @@ this.json.forEach((element:any) => {
     console.log(this.json1);
   }
 });
-}
-}
+}}

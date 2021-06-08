@@ -2,39 +2,39 @@
     {
      "process" : 1,
      "components" : [
-            {"component":"component1"},
-            {"component": "component2"},
-            {"component": "component3"},
-            {"component": "component4"},
-            {"component": "component5"}
+            {"component":"Component1"},
+            {"component": "Component2"},
+            {"component": "Component3"},
+            {"component": "Component4"},
+            {"component": "Component5"}
             ]
     
     },
     {
      "process" : 2,
      "components" : [
-            {"component":"component1"},
-            {"component": "component2"},
-            {"component": "component3"},
-            {"component": "component4"}
+            {"component":"Component1"},
+            {"component": "Component2"},
+            {"component": "Component3"},
+            {"component": "Component4"}
                     ]
     },
     {"process" : 3,
         "components" : [
-               {"component":"component1"},
-               {"component": "component2"},
-               {"component": "component3"}
+               {"component":"Component1"},
+               {"component": "Component2"},
+               {"component": "Component3"}
         ]
     },
     {"process" : 4,
         "components" : [
-               {"component":"component1"},
-               {"component": "component2"}
+               {"component":"Component1"},
+               {"component": "Component2"}
         ]
     },
     {"process" : 5,
         "components" : [
-               {"component":"component1"}
+               {"component":"Component1"}
              ]
     }
     ]

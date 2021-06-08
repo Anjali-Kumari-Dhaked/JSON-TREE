@@ -1,8 +1,24 @@
 <div>
    <mat-tab-group mat-align-tabs="start" >
+    
+
+    <!-- <div *ngFor="let tab of tabs">
+        <dcl-wrapper [type]="tab"></dcl-wrapper>
+      </div> -->
+     
+    
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <h3 (click)="in(1)" >process1</h3>
+        </ng-template>
+       <div class=" btn btn-primary pd-3"  (click)="selectComponent(i)" *ngFor="let obj of json1; let i=index">Button{{i+1}}
+      </div>
+    </mat-tab>
+
+
     <mat-tab >
         <ng-template mat-tab-label>
-            <span (click)="in(1)" >process1</span>
+            <h3 (click)="in(2)" >process2</h3>
         </ng-template>
        <button class=" btn btn-primary pd-3"  (click)="selectComponent(i)" *ngFor="let obj of json1; let i=index">Button{{i+1}}</button>
     </mat-tab>
@@ -10,29 +26,21 @@
 
     <mat-tab >
         <ng-template mat-tab-label>
-            <span (click)="in(2)" >process2</span>
-        </ng-template>
-       <button class=" btn btn-primary pd-3"  (click)="selectComponent(i)" *ngFor="let obj of json1; let i=index">Button{{i+1}}</button>
-    </mat-tab>
-
-
-    <mat-tab >
-        <ng-template mat-tab-label>
-            <span (click)="in(3)" >process3</span>
+            <h3 (click)="in(3)" >process3</h3>
         </ng-template>
        <button class=" btn btn-primary pd-3"  (click)="selectComponent(i)" *ngFor="let obj of json1; let i=index">Button{{i+1}}</button>
     </mat-tab>
 
     <mat-tab >
         <ng-template mat-tab-label>
-            <span (click)="in(4)" >process4</span>
+            <h3 (click)="in(4)" >process4</h3>
         </ng-template>
        <button class=" btn btn-primary pd-3"  (click)="selectComponent(i)" *ngFor="let obj of json1; let i=index">Button{{i+1}}</button>
     </mat-tab>
 
     <mat-tab >
         <ng-template mat-tab-label>
-            <span (click)="in(5)" >process5</span>
+            <h3 (click)="in(5)" >process5</h3>
         </ng-template>
        <button class=" btn btn-primary pd-3"  (click)="selectComponent(i)" *ngFor="let obj of json1; let i=index">Button{{i+1}}</button>
     </mat-tab>
@@ -42,21 +50,4 @@
             </template></div>
     </div>
       
-    <!-- <mat-tab label="Process2" (click)="index(2)">
-            <button class="btn btn-primary pr-3px"  (click)="selectComponent(obj.process)" *ngFor="let obj of json1  let i=index">Button{{i+1}}</button>
-          
-             </mat-tab>
-
-    <mat-tab label="Process3" (click)="index(1)">
-                <button class="btn btn-primary"  (click)="  selectComponent(obj.process)" *ngFor="let obj of json1 let i=index">Button{{i+1}}</button>
-                 </mat-tab>
-            
-        <mat-tab label="Process4" (click)="index(1)">
-                    <button class="btn btn-primary"  (click)="  selectComponent(obj.process)" *ngFor="let obj of json1 let i=index">Button{{i+1}}</button>
-                     </mat-tab>
-
-        <mat-tab label="Process5" (click)="index(1)">
-            <button class="btn btn-primary"  (click)="  selectComponent(obj.process)" *ngFor="let obj of json1 let i=index">Button{{i+1}}</button></mat-tab>
-    </mat-tab-group>
-  -->
-<!-- </div> -->
+  

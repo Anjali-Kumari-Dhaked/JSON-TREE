@@ -31,6 +31,11 @@ import { Component3Component } from './component3/component3.component';
 import { Component4Component } from './component4/component4.component';
 import { Component5Component } from './component5/component5.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { C1, C2, C3, C4, C5 } from './c1-c3.component';
+import { Tabs } from './tabs.component';
+import { DclWrapper } from './dcl-wrapper.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +55,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     Component3Component,
     Component4Component,
     Component5Component,
+    C1,C2,C3,C4 ,C5,
+    Tabs,
+     DclWrapper, 
+  
  
      
   ],
@@ -73,6 +82,6 @@ import {MatTabsModule} from '@angular/material/tabs';
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents:[DynamicComponent, Dynamic2Component]
-})
+  entryComponents:[DynamicComponent, Dynamic2Component, Component1Component, Component2Component, Component3Component,Component4Component, Component5Component, C1, C2, C3,C4,C5
+  ]})
 export class AppModule { }

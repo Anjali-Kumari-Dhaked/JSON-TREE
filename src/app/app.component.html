@@ -1,13 +1,18 @@
 <!-- <app-validate-reactive-form></app-validate-reactive-form> -->
 
 <!-- <app-data-from-json></app-data-from-json> -->
-<app-jsontree></app-jsontree>
+<!-- <app-jsontree></app-jsontree>
 <app-main-dynamic></app-main-dynamic><br><br>
-<app-showcomponent></app-showcomponent>
+<app-showcomponent></app-showcomponent><br><br> -->
 
-
-
-
+<mat-tab-group (selectedTabChange)="getCmponent($event)">
+    <mat-tab label="process1"></mat-tab>
+    <mat-tab label="process2"></mat-tab>
+    <mat-tab label="process3"></mat-tab>
+    <mat-tab label="process4"></mat-tab>
+    <mat-tab label="process5"></mat-tab>
+</mat-tab-group> 
+ <my-tabs class="myTab" [tabs]="types"></my-tabs>
 
 <!-- <app-stepper></app-stepper><br><br>
 <app-progress></app-progress><br><br>
