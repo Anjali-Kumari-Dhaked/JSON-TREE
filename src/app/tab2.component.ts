@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core'
-import {DclWrapper} from './dcl-wrapper.component'
+
+import { DclWrapper } from './dcl-wrapper.component'
 // Use dcl-wrapper component
 @Component({
   selector: 'my-tabs',

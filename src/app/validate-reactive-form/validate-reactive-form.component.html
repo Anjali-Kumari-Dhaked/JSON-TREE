@@ -1,18 +1,24 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+<img class="img" src="../../assets/logo.png" alt="">
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="form">
 
     <div>
-      <label>
-        Email:
-           <input formControlName="email" class="{{myForm.controls.email.errors !== null ? 'error' : ''}}" placeholder="Your email">
+      <label class="email-label">
+        <i class="fa fa-user" style="font-size:24px"></i> User Name<br>
+           <input class="input" formControlName="email"  placeholder="Your email" type="email" required>
+           <!-- <div *ngIf="myForm.email.errors"></div> -->
       </label>
     </div>
     <div>
-      <label>
-        password:
-        <input formControlName="password" placeholder="Your password">
+      <label class="email-label"><i class="fa fa-lock" style="font-size:24px"></i>
+        Password <br>
+        <input class="input" formControlName="password" placeholder="Your password" type="password">
       </label>
     </div>
     <!-- <button type="submit">Send</button> -->
-    <button type="submit" [disabled]="myForm.invalid">Signin</button>
+    <!-- <button class=" btn-primary button" type="submit" [disabled]="myForm.invalid" (click)="login()">Login</button> 
+    -->
+
+    <button class=" btn-primary button" type="submit"  (click)="login()">Login</button>
   </form>
 

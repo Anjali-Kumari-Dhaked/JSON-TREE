@@ -34,6 +34,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { C1, C2, C3, C4, C5 } from './c1-c3.component';
 import { Tabs } from './tabs.component';
 import { DclWrapper } from './dcl-wrapper.component';
+import { FormPanelComponent } from './form-panel/form-panel.component';
+import { LoginComponent } from './login/login.component';
+// import { Tab2 } from './tab2.component';
 
 
 @NgModule({
@@ -57,7 +60,11 @@ import { DclWrapper } from './dcl-wrapper.component';
     Component5Component,
     C1,C2,C3,C4 ,C5,
     Tabs,
-     DclWrapper, 
+     DclWrapper,
+     FormPanelComponent,
+     LoginComponent
+     
+     
   
  
      
@@ -82,6 +89,6 @@ import { DclWrapper } from './dcl-wrapper.component';
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents:[DynamicComponent, Dynamic2Component, Component1Component, Component2Component, Component3Component,Component4Component, Component5Component, C1, C2, C3,C4,C5
+  entryComponents:[DynamicComponent, Dynamic2Component, Component1Component, Component2Component, Component3Component,Component4Component, Component5Component, C1, C2, C3,C4,C5,ValidateReactiveFormComponent
   ]})
 export class AppModule { }

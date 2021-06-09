@@ -6,14 +6,19 @@ import { AbstractControl, EmailValidator, FormBuilder, FormGroup, Validators } f
   styleUrls: ['./validate-reactive-form.component.css']
 })
 export class ValidateReactiveFormComponent implements OnInit {
-
+  //submitted = false;
+  retrievedObject:any;
+  retrievedObject1:any;
   myForm:any= FormGroup;
 constructor(private fb: FormBuilder ){
 
 }
   ngOnInit() {
+  localStorage.setItem("anjali.kumari@wakjing.tech","123456");
+
+
     this.myForm = this.fb.group({
-      email:['', [this.emailValidator]],
+      email:['', [ Validators.required, this.emailValidator]],
       // email:['', [Validators.required],
       password :['',[Validators.required, Validators.minLength(6)] ]
       // password :['',[Validators.required, this.ageValidator]]
@@ -21,11 +26,12 @@ constructor(private fb: FormBuilder ){
   }
 
   onSubmit(form: FormGroup) {
- console.log(form);
- console.log(form.valid);
- console.log(form.get('email')?.dirty);
- console.log(form.controls.email.errors);
- console.log(form.controls.password.errors);
+    localStorage.setItem("formdata", JSON.stringify(this.myForm.value))
+//  console.log(form);
+//  console.log(form.valid);
+//  console.log(form.get('email')?.dirty);
+//  console.log(form.controls.email.errors);
+//  console.log(form.controls.password.errors);
   }
 
   ageValidator(control:AbstractControl):{[key:string]:boolean} | null {
@@ -40,6 +46,36 @@ constructor(private fb: FormBuilder ){
     return null ;
        }
       return {invalidEmail:true};
+      }
+
+
+    login(){
+      // this.submitted = true;
+      this. retrievedObject = localStorage.getItem('formdata');
+
+       this.retrievedObject=JSON.parse(this.retrievedObject).email;
+
+       this. retrievedObject1 = localStorage.getItem('formdata');
+
+       this.retrievedObject1=JSON.parse(this.retrievedObject1).password;
+       console.log(this.retrievedObject, this.retrievedObject1);
+      // stop here if form is invalid
+      if (this.myForm.invalid) {
+          alert("invalid email id and password");
+          return;
+      }
+      if(this.myForm.valid){
+        if(this.retrievedObject== "anjali.kumari@walking.tech"&&this.retrievedObject1=="123456"){
+          alert("login successfully");
+        }
+        else{
+          alert("invalid");
+        }
+        
+     }
+     localStorage.clear();
+      // display form values on success
+      // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.myForm.value, null, 4));
       }
 }
 
