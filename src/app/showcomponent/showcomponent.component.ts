@@ -12,10 +12,11 @@ import { Component5Component } from '../component5/component5.component';
   styleUrls: ['./showcomponent.component.css']
 })
 export class ShowcomponentComponent implements OnInit {
+  // @Input() dynamic1:any=[];
   json:any=[];
   json1:any=[];
   //tab:any=this.json[0].components[0].component;
-  
+ 
   
   componentRef: any;
   @ViewChild('loadComponent', { read: ViewContainerRef }) 
@@ -27,7 +28,7 @@ export class ShowcomponentComponent implements OnInit {
       console.log(data);
       this.json = data;
  console.log(this.json[0].components[0].component);
-
+// console.log(this.dynamic1);
    })}
 
    ngOnInit(): void {

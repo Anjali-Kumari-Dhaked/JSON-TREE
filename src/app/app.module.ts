@@ -1,7 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,9 +35,20 @@ import { Tabs } from './tabs.component';
 import { DclWrapper } from './dcl-wrapper.component';
 import { FormPanelComponent } from './form-panel/form-panel.component';
 import { LoginComponent } from './login/login.component';
+import { TextFieldComponent } from './text-field/text-field.component';
+import { PasswordComponent } from './password/password.component';
+import { ButtonComponent } from './button/button.component';
+import { ImageComponent } from './image/image.component';
+import { BaseComponent } from './base/base.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
 // import { Tab2 } from './tab2.component';
-
-
+import {MatIconModule} from '@angular/material/icon';
+import { PasswordFieldComponent } from './password-field/password-field.component';
+import {MatRippleModule} from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import { TitleComponent } from './title/title.component';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,12 +72,14 @@ import { LoginComponent } from './login/login.component';
     Tabs,
      DclWrapper,
      FormPanelComponent,
-     LoginComponent
-     
-     
-  
- 
-     
+     LoginComponent,
+     TextFieldComponent,
+     PasswordComponent,
+     ButtonComponent,
+     ImageComponent,
+     BaseComponent,
+     PasswordFieldComponent,
+     TitleComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +95,13 @@ import { LoginComponent } from './login/login.component';
     MatDatepickerModule,
     MatProgressBarModule,
     MatSlideToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatTooltipModule,
+    MatIconModule,
+    MatRippleModule,
+    MatButtonModule,
+    MatInputModule
     
   ],
   providers: [],

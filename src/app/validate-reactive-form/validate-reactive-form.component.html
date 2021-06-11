@@ -6,19 +6,20 @@
       <label class="email-label">
         <i class="fa fa-user" style="font-size:24px"></i> User Name<br>
            <input class="input" formControlName="email"  placeholder="Your email" type="email" required>
-           <!-- <div *ngIf="myForm.email.errors"></div> -->
-      </label>
+            <!-- <div *ngIf="myForm.email.errors"></div>  -->
+       </label>
     </div>
     <div>
       <label class="email-label"><i class="fa fa-lock" style="font-size:24px"></i>
         Password <br>
         <input class="input" formControlName="password" placeholder="Your password" type="password">
       </label>
-    </div>
+    </div> 
     <!-- <button type="submit">Send</button> -->
     <!-- <button class=" btn-primary button" type="submit" [disabled]="myForm.invalid" (click)="login()">Login</button> 
     -->
 
     <button class=" btn-primary button" type="submit"  (click)="login()">Login</button>
-  </form>
-
+    <div class="show" *ngIf="show">Login Successful</div>
+    <div class="error" *ngIf="error">Please fill correct details</div>
+  </form> 

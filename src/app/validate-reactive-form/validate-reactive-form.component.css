@@ -35,3 +35,16 @@ border: 2px solid red;
     margin-top: 7%;
     /* border-radius: 8%; */
 }
+.error{
+    margin-left: 20%;
+    margin-top: 3%;
+    color: red;
+}
+.show{
+    margin-left: 20%;
+    margin-top: 3%;
+    color: red;
+}
+.hidden{
+    display: none;
+}

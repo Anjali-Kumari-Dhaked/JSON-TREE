@@ -1,5 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%;
-background-color: rgb(232, 234, 235); }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* *{
+    background-color: rgb(237, 241, 241);
+} */
+.login-panel {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    min-width: 200px;
+    margin: 6% 0 0 0;
+    background-color: rgb(244, 244, 245);
+  }
+  
+.login-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+      margin-right: 30%;
+      border: 1px solid #0180E5;
+      background-color: #0180E5 !important;
+      color:#eff5f8 !important;
+      font-weight: 400;
+      font-size: 14px;
+      min-width: 90px;
+    }
+    .container {
+        position: relative;
+      }
+      .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+      }
+      .image{
+          margin: auto auto auto auto;
+      }
+      img{
+          margin-left: 30%;
+      }
+      
